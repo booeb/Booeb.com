@@ -1,0 +1,56 @@
+{
+  "name": "global-timezone-clock",
+  "version": "1.0.0",
+  "description": "Professional digital clock application with multiple time zone support",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:frontend\" \"npm:dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "concurrently \"npm:start:frontend\" \"npm:start:backend\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "test": "concurrently \"npm:test:frontend\" \"npm:test:backend\"",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "lint": "concurrently \"npm:lint:frontend\" \"npm:lint:backend\"",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "format": "concurrently \"npm:format:frontend\" \"npm:format:backend\"",
+    "format:frontend": "cd frontend && npm run format",
+    "format:backend": "cd backend && npm run format",
+    "db:setup": "cd backend && npm run db:setup",
+    "db:migrate": "cd backend && npm run db:migrate",
+    "db:seed": "cd backend && npm run db:seed",
+    "install:all": "npm install && npm install --workspace=frontend && npm install --workspace=backend",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "clock",
+    "timezone",
+    "time",
+    "world-clock",
+    "nextjs",
+    "express",
+    "postgresql"
+  ],
+  "author": "Global Timezone Clock Team",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/GlobalTimeZoneClock"
+  }
+}
